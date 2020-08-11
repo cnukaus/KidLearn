@@ -1,0 +1,13 @@
+def __init__(self,name,course=None):
+	self.name=name
+	if course is None: course=[]
+	self.course=course
+
+def __WRONG_INIT__(self,name,course=[]): #default is causing issue because default arg is only eval once
+	self.name=name
+	self.course=course # will retain 1 obj's value for another obj
+
+# because id(stuA.course) will == id(stuB.course)
+
+def addcourse(self,coursename):
+	self.course.append(coursename)
